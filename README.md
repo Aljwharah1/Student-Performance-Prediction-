@@ -10,19 +10,19 @@ Predicting students' academic performance using Linear Regression.
 
 ## 📝 Description
 
-This project analyzes student data to predict final grades using **Linear Regression**. By examining various academic and behavioral factors, the model identifies key patterns that influence student performance and provides actionable insights for academic improvement.
+This project analyzes student data to predict final grades using **Linear Regression**. The model examines various academic and behavioral factors to forecast student performance and identify patterns that influence academic success.
 
 ---
 
 ## 📊 Dataset
 
-The dataset (`Student_Performance.csv`) contains the following features:
+The dataset (`Student_Performance.csv`) contains **10,007 records** with the following features:
 
 | Feature | Description |
 |---------|-------------|
 | **Hours Studied** | Time spent studying |
 | **Previous Scores** | Past exam results |
-| **Extracurricular Activities** | Participation in non-academic activities |
+| **Extracurricular Activities** | Participation in non-academic activities (0 or 1) |
 | **Sleep Hours** | Average daily sleep duration |
 | **Sample Question Papers Practiced** | Number of practice papers completed |
 | **Target** | Final performance score (prediction target) |
@@ -50,11 +50,6 @@ jupyter notebook
 # Then open student.ipynb in your browser
 ```
 
-**Or run all cells directly:**
-```bash
-jupyter nbconvert --to notebook --execute student.ipynb
-```
-
 ---
 
 ## 📈 Results
@@ -67,34 +62,38 @@ jupyter nbconvert --to notebook --execute student.ipynb
 | **Root Mean Squared Error (RMSE)** | 2.06 |
 | **R-squared (R²)** | 0.9884 |
 
-> **Note:** The model achieves **98.84% accuracy**, indicating excellent predictive performance.
+> **Note:** The model achieves **98.84% accuracy** (R²), indicating excellent predictive performance with minimal error.
 
-### Visualization
+### Visualizations
 
-![Predicted vs Actual Scores](images/output.png)
+**Correlation Matrix:**
+![Correlation Matrix](images/correlation_heatmap.png)
 
-*The scatter plot shows the strong correlation between predicted and actual scores, with most points closely aligned to the ideal prediction line.*
+**Model Performance:**
+![Predicted vs Actual Scores](/Users/aljawharah/Desktop/Tuwaiqbootcame/linear-regression-task-Aljwharah1/output.png)
+
+*The scatter plot shows strong correlation between predicted and actual scores, with most points closely aligned to the ideal prediction line (red dashed line).*
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Python** - Programming language
+- **Python 3.10** - Programming language
 - **Jupyter Notebook** - Interactive development environment
 - **Pandas** - Data manipulation and analysis
 - **NumPy** - Numerical computations
 - **Matplotlib** - Data visualization
-- **Seaborn** - Statistical plots
-- **Scikit-learn** - Machine learning model (Linear Regression)
+- **Seaborn** - Statistical plots and heatmaps
+- **Scikit-learn** - Machine learning (Linear Regression model)
 
 ---
 
-## 💡 Key Insights
+## 💡 Key Findings
 
-- Students with more study hours tend to perform better
-- Previous scores are a strong predictor of future performance
-- Adequate sleep positively impacts academic outcomes
-- Practice papers significantly improve test scores
+- The Linear Regression model demonstrates **high accuracy** with R² = 0.9884
+- **Low RMSE (2.06)** indicates predictions are very close to actual values
+- Correlation analysis reveals relationships between student behavior and performance
+- All features contribute meaningfully to predicting student outcomes
 
 ---
 
@@ -102,22 +101,10 @@ jupyter nbconvert --to notebook --execute student.ipynb
 ```
 student-performance-prediction/
 ├── data/
-│   └── Student_Performance.csv    # Dataset
+│   └── Student_Performance.csv    # Dataset (10,007 records)
 ├── images/
+│   ├── correlation_heatmap.png    # Correlation matrix visualization
 │   └── output.png                 # Model results visualization
-├── student.ipynb                  # Jupyter Notebook with analysis
+├── student.ipynb                  # Jupyter Notebook with full analysis
 └── README.md                      # Project documentation
 ```
-
----
-
-## 🔍 Notebook Contents
-
-The `student.ipynb` notebook includes:
-1. **Data Loading & Exploration** - Understanding the dataset
-2. **Data Preprocessing** - Cleaning and preparing data
-3. **Exploratory Data Analysis (EDA)** - Visualizing patterns and relationships
-4. **Model Training** - Building the Linear Regression model
-5. **Model Evaluation** - Testing and measuring performance
-6. **Results Visualization** - Plotting actual vs predicted values
-
